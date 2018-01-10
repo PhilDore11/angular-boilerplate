@@ -1,0 +1,15 @@
+{
+    "BACK": "De Retour",
+    "CANCEL": "Annuler",
+    "CLOSE": "Fermer",
+    "CONFIRM": "Confirmer",
+    "LOGIN_HEADER": "Ouverture de session",
+    "LOGIN_TEXT": "Veuillez ouvrir une session pour accéder à vos périodes de demande.",
+    "LOGIN": "Ouvrir une session",
+    "LOGOUT": "Fermer la session",
+    "SAVE": "Sauvegarder",
+    "USERNAME": "Nom d'utilisateur",
+    "PASSWORD": "Mot de passe",
+    "TITLE": "Boilerplate App",
+    "WELCOME": "Bienvenu(e) {{username}}"
+}

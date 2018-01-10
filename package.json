@@ -1,0 +1,48 @@
+{
+  "name": "jazzbid",
+  "version": "2.0.0",
+  "dependencies": {
+    "async": "^1.5.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "bower": "^1.8.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.5.0",
+    "moment": "^2.12.0",
+    "morgan": "^1.7.0",
+    "nodemailer": "^2.3.0",
+    "request": "^2.81.0",
+    "webpack": "^3.2.0"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install",
+    "start": "./node_modules/.bin/npm-run-all --parallel bundle start:node",
+    "bundle": "./node_modules/.bin/webpack --config webpack-base.config.js",
+    "start:prod": "./node_modules/.bin/npm-run-all --parallel bundle:prod start:node",
+    "bundle:auto": "./node_modules/.bin/webpack --config webpack-dev.config.js",
+    "bundle:prod": "./node_modules/.bin/webpack --config webpack-prod.config.js",
+    "start:dev": "./node_modules/.bin/npm-run-all --parallel bundle:dev start:node",
+    "bundle:dev": "./node_modules/.bin/webpack --config webpack-dev.config.js --watch",
+    "start:mock": "./node_modules/.bin/npm-run-all --parallel bundle:mock start:node",
+    "bundle:mock": "./node_modules/.bin/webpack --config webpack-mock.config.js --watch",
+    "start:stg": "./node_modules/.bin/npm-run-all --parallel bundle:stg start:node",
+    "bundle:stg": "./node_modules/.bin/webpack --config webpack-stg.config.js",
+    "start:node": "node node/server.js"
+  },
+  "main": "node/server.js",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "ngtemplate-loader": "^2.0.1",
+    "npm-run-all": "^4.0.2",
+    "start-server-webpack-plugin": "^2.2.0",
+    "style-loader": "^0.18.2",
+    "webpack-config": "^7.0.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}

@@ -1,0 +1,5 @@
+table.md-table th.md-column md-icon.md-sort-icon {
+  opacity: .5;
+  min-height: 20px;
+  min-width: 20px;
+}

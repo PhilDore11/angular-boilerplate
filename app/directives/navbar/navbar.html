@@ -1,0 +1,37 @@
+<md-toolbar class="md-whiteframe-z2 md-hue-2 hide-print">
+  <div class="md-toolbar-tools" layout="row">
+    <h1>
+      <span style="cursor: pointer" ng-click="goHome()" translate="TITLE"></span>
+    </h1>
+    <md-icon ng-if="getCurrentStateTitleKey()">chevron_right</md-icon>
+    <h1>
+      <span class="jz-clickable" ng-click="goTo(getCurrentStateBackRoute())" ng-show="getCurrentStateBackRoute() !== null">
+        <span translate="{{getCurrentStateTitleKey()}}"></span>
+      </span>
+      <span translate="{{getCurrentStateTitleKey()}}" ng-show="getCurrentStateBackRoute() === null"></span>
+    </h1>
+
+    <div flex></div>
+
+    <md-button ng-hide="userInfo.isAuthenticated" ng-click="login()">
+      <md-icon>lock_outline</md-icon>
+      <span translate="LOGIN"></span>
+    </md-button>
+    <md-button ng-show="userInfo.isAuthenticated && currentUser && !currentUser.isAdmin" ng-click="profile()">
+      <md-icon>account_circle</md-icon>
+      <span>{{userName}}</span>
+    </md-button>
+    <md-button ng-hide="!userInfo.isAuthenticated" ng-click="logout()">
+      <md-icon>lock_open</md-icon>
+      <span translate="LOGOUT"></span>
+    </md-button>
+    <md-divider class="jz-navbar-divider"></md-divider>
+    <md-button class="md-fab md-mini md-default md-hue-1" ng-if="lang==='en'" ng-click="switchLanguage('fr')">
+      FR
+    </md-button>
+    <md-button class="md-fab md-mini md-default md-hue-1" ng-if="lang==='fr'" ng-click="switchLanguage('en')">
+      EN
+    </md-button>
+  </div>
+</md-toolbar>
+  

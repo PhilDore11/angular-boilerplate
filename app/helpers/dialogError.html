@@ -1,0 +1,13 @@
+<md-dialog aria-label="An error has occured" layout-padding>
+    <h2>{{message}}</h2>
+    <md-dialog-content>
+        <ul>
+            <li ng-repeat="error in errors track by $index">
+                {{error}}
+            </li>
+        </ul>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="closeDialog()" class="md-primary" translate="CLOSE"></md-button>
+    </md-dialog-actions>
+</md-dialog>

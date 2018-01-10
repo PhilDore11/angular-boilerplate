@@ -1,0 +1,63 @@
+<div layout="column">
+  <md-toolbar class="md-table-toolbar md-default">
+    <div class="md-toolbar-tools">
+      <h1 translate="{{titleKey}}"></h1>
+      <div flex></div>
+      <div ng-hide="hideSearch">
+        <md-icon>search</md-icon>
+        <input ng-model="filter" layout-margin />
+      </div>
+      <md-button class="md-icon-button md-raised md-accent" md-colors="{background: 'default-green'}" ng-click="add()" ng-show="showAdd">
+        <md-icon md-colors="{background: 'default-green'}">add</md-icon>
+        <md-tooltip><span translate="{{addLabelKey}}"></span></md-tooltip>
+      </md-button>
+
+      <md-button class="md-icon-button md-raised md-accent md-accent md-hue-3 hide-print" ng-repeat="action in tableActions" ng-click="action.onClick()">
+        <md-icon>{{action.icon}}</md-icon>
+        <md-tooltip><span translate="{{action.labelKey}}"></span></md-tooltip>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-divider></md-divider>
+  <div layout="column" layout-align="center center" ng-if="loading && (!data || data.length == 0)">
+    <div class="md-subhead" layout-padding translate="LOADING_TEXT"></div>
+  </div>
+  <div layout="column" layout-align="center center" ng-if="!loading && (!data || data.length == 0)">
+    <div layout-padding class="md-subhead" translate="NO_TABLE_DATA_TEXT" translate-values="{{noTableDataValues}}"></div>
+  </div>
+  <md-table-container layout="column" ng-if="!loading && data && data.length > 0">
+    <table md-table md-row-select="selected" ng-model="selected" class="md-primary">
+      <thead md-head ng-show="!hideHeader" md-order="order">
+        <tr md-row>
+          <th md-column ng-repeat="col in columns" width="{{col.width}}" ng-style="{'max-width': col.width + 'px'}" ng-attr-md-order-by="{{col.sort !== '' ? col.sort : ''}}" ng-class="{'hide-print' : col.hidePrint}">
+            <span translate="{{col.labelKey}}"></span>
+          </th>
+          <th md-column width="10" ng-show="actions && actions.length > 0"></th>
+        </tr>
+      </thead>
+      <tbody md-body>
+        <tr md-row md-select="item" md-auto-select ng-repeat="item in data | orderBy: order | tableFilter: columns:filter | limitTo: limit: (page - 1) * limit" ng-disabled="!!item.disabled">
+          <td md-cell ng-repeat="col in columns" class="md-truncate" width="{{col.width}}" ng-style="{'max-width': col.width + 'px'}" ng-class="{'hide-print' : col.hidePrint}">
+            <span ng-bind="col.getValue(item)" class="{{col.getClass(item)}}" ng-style="col.getStyle(item)"></span>
+          </td>
+          <td md-cell ng-show="actions && actions.length > 0">
+            <md-menu md-position-mode="target-right target">
+              <md-button class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+                <md-icon>more_vert</md-icon>
+              </md-button>
+              <md-menu-content>
+                <md-menu-item ng-repeat="action in actions" ng-show="action.show(item)">
+                  <md-button ng-disabled="!!item.isDisabled" ng-click="action.onClick(item)">
+                    <md-icon>{{action.icon}}</md-icon>
+                    <span translate="{{action.labelKey}}"></span>
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+  <md-table-pagination md-limit="limit" md-limit-options="[5, 10, 15]" md-page="page" md-total="{{data.length}}" md-page-select ng-hide="hidePagination"></md-table-pagination>
+</div>

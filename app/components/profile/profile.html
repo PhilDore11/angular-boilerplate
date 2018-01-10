@@ -1,0 +1,21 @@
+<div layout-fill>
+  <md-card layout="column">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{profile.fullName}}</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-divider></md-divider>
+    <md-card-content>
+      <pre>{{profile | json}}</pre>
+    </md-card-content>
+    <md-divider></md-divider>
+    <md-card-actions layout="row">
+      <md-button class="md-raised" ui-sref="app.home" md-colors="{background: 'grey-300'}">
+        <md-icon>chevron_left</md-icon>
+        <span translate="BACK"></span>
+      </md-button>
+      <div flex></div>
+    </md-card-actions>
+  </md-card>
+</div>

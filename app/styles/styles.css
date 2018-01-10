@@ -1,0 +1,139 @@
+/* Helpers */
+
+.jz-text-center,
+.jz-text-center .ag-header-cell-label {
+  text-align: center !important;
+  padding: 1px;
+}
+
+.jz-text-date {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.jz-text-right {
+  text-align: right !important;
+}
+
+.jz-border-right {
+  border-right: 1px solid #d3d3d3 !important;
+}
+
+.jz-border-left {
+  border-left: 1px solid #d3d3d3 !important;
+}
+
+.jz-overlow-visible {
+  overflow: visible;
+}
+
+.jz-clickable {
+  cursor: pointer;
+  cursor: hand;
+}
+
+div.jz-align md-input-container {
+  margin-right: 40px;
+}
+md-input-container .md-errors-spacer {
+    min-height: 0;
+}
+
+.inline-spinner {
+  display : inline;
+  margin-left: 15px;
+}
+
+/* Fixed Header Row */
+
+table.md-table.clone {
+  min-height: 56px;
+}
+
+table.md-table.clone th {
+  border-bottom: 1px solid #9E9E9E;
+}
+table.md-table:not(.md-row-select) td.md-cell:nth-child(n+2):nth-last-child(n+2), 
+table.md-table:not(.md-row-select) th.md-column:nth-child(n+2):nth-last-child(n+2) {
+  padding: 0px 20px 0px 0px;
+}
+table.md-table:not(.md-row-select) td.md-cell:first-child, 
+table.md-table:not(.md-row-select) th.md-column:first-child {
+  padding: 0px 20px;
+}
+
+.p-width{
+  min-width: 260px;
+  display: inline-block;
+}
+
+/* Angular Material */
+
+md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]) {
+  color: rgba(0,0,0,0.87) !important;
+}
+
+md-input-container.jz-inline-input> .md-errors-spacer {
+  display: none;
+}
+
+/* Print */
+.show-print {
+  display: none;
+}
+
+@media print {
+  md-table-container {
+    overflow: visible;
+  }
+
+  .hide-print {
+    display: none;
+  }
+  .show-print {
+    display: block;
+  }
+}
+
+/* Angular Material */
+.jz-navbar-divider {
+  border-color: white !important;
+  height: 100%;
+}
+
+md-tabs-canvas {
+  background: white;
+}
+
+.jz-text-wrap {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+
+.jz-status-label {
+  display: inline-block;
+  position: relative;
+  /** Alignment adjustments */
+  min-height: 24px;
+  min-width: 200px;
+  line-height: 24px;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 6px;
+  margin: 6px 8px;
+  /* Uppercase text content */
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 80px;
+}
+
+/* IE Fixes */
+input::-ms-clear {
+  width : 0;
+  height: 0;
+}

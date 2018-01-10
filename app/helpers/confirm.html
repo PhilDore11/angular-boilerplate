@@ -1,0 +1,10 @@
+<md-dialog aria-label="Confirmation" layout-padding>
+    <h2>{{title}}</h2> 
+    <md-dialog-content>
+        <p>{{message}}</p>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="cancel()" translate="CANCEL"></md-button>
+        <md-button ng-click="confirm()" class="md-primary" translate="CONFIRM"></md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,14 @@
+{
+    "BACK": "Back",
+    "CANCEL": "Cancel",
+    "CLOSE": "Close",
+    "CONFIRM": "Confirm",
+    "LOGIN_HEADER": "Please Login",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "SAVE": "Save",
+    "USERNAME": "Username",
+    "PASSWORD": "Password",
+    "TITLE": "Boilerplate App",
+    "WELCOME": "Welcome {{username}}"
+}

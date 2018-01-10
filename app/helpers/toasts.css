@@ -1,0 +1,15 @@
+md-toast div.md-toast-content.jz-error-toast {
+  color: white !important;
+  background-color: #ff5722 !important;
+}
+md-toast div.md-toast-content.jz-error-toast> md-icon {
+  color: white !important;
+}
+
+md-toast div.md-toast-content.jz-success-toast {
+  color: white !important;
+  background-color: #4caf50 !important;
+}
+md-toast div.md-toast-content.jz-success-toast> md-icon {
+  color: white !important;
+}
